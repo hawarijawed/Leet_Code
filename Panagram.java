@@ -1,9 +1,7 @@
 /******************************************************************************
-
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
+Problem statement: Given a string str and an integer k, return true if the string can be changed into a pangram after at most k operations, else return false.
+A single operation consists of swapping an existing alphabetic character with any other lowercase alphabetic character.
+Note - A pangram is a sentence containing every letter in the english alphabet.
 *******************************************************************************/
 import java.util.*;
 public class Panagram
