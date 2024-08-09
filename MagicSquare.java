@@ -1,9 +1,9 @@
 /******************************************************************************
+A 3 x 3 magic square is a 3 x 3 grid filled with distinct numbers from 1 to 9 such that each row, column, and both diagonals all have the same sum.
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
+Given a row x col grid of integers, how many 3 x 3 contiguous magic square subgrids are there?
 
+Note: while a magic square can only contain numbers from 1 to 9, grid may contain numbers up to 15.
 *******************************************************************************/
 
 class Solution {
