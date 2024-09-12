@@ -14,16 +14,17 @@ class Solution {
         }
 
         String str = countAndSay(n-1);
-        String res  ="";
+        StringBuilder res  = new StringBuilder();
         int counter =0;
         for(int i=0; i<str.length(); i++){
             counter++;
             if(i==str.length()-1 || str.charAt(i) != str.charAt(i+1)){
-                res = res + counter + str.charAt(i);
+                res.append(counter);
+                res.append(str.charAt(i));
                 counter = 0;
             }
         }
 
-        return res;
+        return res.toString();
     }
 }
