@@ -2,6 +2,7 @@
 Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
 You must write an algorithm that runs in O(n) time and uses O(1) extra space. 
 */
+//------------------------------- O(n) Space solution -------------------------//
 class Solution {
     public List<Integer> lexicalOrder(int n) {
         List<Integer> lst = new ArrayList<>();
@@ -25,4 +26,25 @@ class Solution {
             dfs(currNum*10+digit, target, lst);
         }
     }
-}L
+}
+//--------------------------------- O(1) Space solution ------------------------------//
+class Solution {
+    public List<Integer> lexicalOrder(int n) {
+        List<Integer> lst = new ArrayList<>();
+        int currNum = 1;
+        for(int i=1; i<=n; i++){
+            lst.add(currNum);
+            if(currNum*10 <= n){
+                currNum *= 10;
+            }
+            else{
+                while(currNum%10 == 9 || currNum == n){
+                    currNum /= 10;
+                }
+                currNum += 1;
+            }
+        }
+        return lst;
+    }
+    
+}
