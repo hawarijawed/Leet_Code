@@ -1,6 +1,34 @@
 /*
 Given the head of a singly linked list, sort the list using insertion sort, and return the sorted list's head.
 */
+//--------------------------- Insertion Sort Implementation --------------------------//
+class Solution {
+    
+    public ListNode insertionSortList(ListNode head) {
+        ListNode dummy = new ListNode();
+        ListNode previous = dummy;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            if (previous.val > current.val) {
+                previous = dummy;
+            }
+
+            //previous.val < current.val <= previous.next.val
+            while (previous.next != null && previous.next.val < current.val) {
+                previous = previous.next;
+            }
+            current.next = previous.next;
+            previous.next = current;
+
+            //previous = dummy;
+            current = next;
+        }
+        return dummy.next;
+    }
+}
+
+//--------------------------- Using Built In Sort ------------------------//
 class Solution {
     public ListNode insertionSortList(ListNode head) {
         ArrayList<Integer> lst = new ArrayList<>();
