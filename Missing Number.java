@@ -37,3 +37,43 @@ class Solution {
         return n;
     }
 }
+
+//------------------------- Approach 03 -------------------//
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        if(n==1){
+            return nums[0] != 0? 0: 1;
+        }
+        for(int i=0; i<n; i++){
+            while(nums[i]  != i && nums[i] < n){
+                int temp = nums[i];
+                nums[i] = nums[temp];
+                nums[temp] = temp;
+            }
+        }
+
+        for(int i=0; i<n; i++){
+            if(nums[i] != i){
+                return i;
+            }
+        }
+        return n;
+    }
+}
+//------------------------- Approach 04 -------------------//
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        if(n==1){
+            return nums[0] != 0? 0: 1;
+        }
+        int expected_sum = n*(n+1)/2;
+        int actual_sum = 0;
+        for(int val: nums){
+            actual_sum += val;
+        }
+        return expected_sum-actual_sum;
+    }
+}
+
